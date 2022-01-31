@@ -11,14 +11,14 @@ class Program
                        "Volkswagen","Opel", "Mazda","Suzuki" };
 
 
-        void Lab1a()
+        void Lab1a() // a. Ta fram den bil som heter ”Opel” från arrayen. 
         {
             var findCar = cars.FirstOrDefault(car => car.Equals("Opel", StringComparison.OrdinalIgnoreCase));
 
             Console.WriteLine(findCar);
         }
 
-        void Lab1b()
+        void Lab1b() // b. Ta fram alla bilar vars namn börjar på ”V”.
         {
             var result = cars.Where(car => car.StartsWith("V", StringComparison.OrdinalIgnoreCase));
 
@@ -28,7 +28,7 @@ class Program
             }
         }
 
-        void Lab1c()
+        void Lab1c() // c. Ta fram alla bilar vars namn innehåller bokstäverna ”da”.
         {
             var result = cars.Where(car => car.ToLower().Contains("da", StringComparison.OrdinalIgnoreCase));
 
@@ -38,7 +38,7 @@ class Program
             }
         }
 
-        void Lab1d()
+        void Lab1d() // d. Ta fram alla bilar som börjar på ”M” eller som slutar på ”i”.
         {
             var result = cars.Where(car => car.StartsWith("M") || car.ToLower().EndsWith("i"));
 
@@ -68,26 +68,27 @@ class Program
             "Madness", "Manic Street Preachers", "The Offspring", 
             "Pink Floyd", "Rammstein", "Red Hot Chili Peppers", "Deep Purple", "U2" };
 
-        void Lab2a()
+        void Lab2a() // a. Ta fram det band som har längst bandnamn
         {
             var result = bands.OrderByDescending(b => b.Length).FirstOrDefault();
             Console.WriteLine(result);
         }
 
-        void Lab2b()
+        void Lab2b() // b. Ta fram det band som har kortast bandnamn
         {
             var result = bands.OrderBy(b => b.Length).FirstOrDefault();
             Console.WriteLine(result);
         }
 
-        void Lab2c()
+        void Lab2c() // c. Ta fram en siffra på hur många band som börjar på bokstaven ”M”
         {
             var result = bands.Where(b => b.StartsWith("M")).Count();
 
             Console.WriteLine(result);
         }
 
-        void Lab2d()
+        void Lab2d()  /* d. Ta ut en lista på alla band sorterad i bokstavsordning.
+                      Visa bara band som har ett bandnamn som är längre än 6 bokstäver.*/
         {
             var result = bands.Where(bands => bands.Length > 6).OrderBy(bands => bands);
 
@@ -98,7 +99,8 @@ class Program
             }
         }
 
-        void Lab2e()
+        void Lab2e() /* e. Skapa en lista som sorteras på längden på banden namn. 
+                      Det band med kortast namn skall hamna först i listan och det med längst namn skall hamna sist */
         {
             var result = bands.OrderBy(bands => bands.Length);
             
